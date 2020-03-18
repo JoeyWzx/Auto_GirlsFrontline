@@ -1,8 +1,8 @@
-from auto_0_2 import *
+from auto8_1n import *
 
-print("截取前往强化界面判断区域")
-time.sleep(0.5)
+time.sleep(1)
 img = getImage(GOTO_POWERUP_IMAGE_BOX)
+#print(img.size)
 img.show()
 img.save("initial_IMG/goto_powerup.png")
 
