@@ -23,7 +23,7 @@ from skimage.metrics import structural_similarity
 
 #=================截图比对区域=================#
 IMAGE_PATH = 'initial_IMG/'#读取截图的路径
-MAIN_MENU_IMAGE_BOX = [0.65,0.59,0.75,0.66]#主界面判断区域                       
+MAIN_MENU_IMAGE_BOX = [0.65,0.52,0.75,0.60]#主界面判断区域                       
 L_SUPPORT_IMAGE_BOX = [0.05,0.30,0.18,0.39]#后勤完成界面判断区域                
 COMBAT_MENU_IMAGE_BOX = [0.05,0.70,0.12,0.80]#战斗菜单界面判断区域          
 CHOOSE_8_1N_IMAGE_BOX = [0.50,0.32,0.60,0.40]#8-1n菜单界面判断区域                        
@@ -48,9 +48,9 @@ BACK_TO_COMBAT_CLICK_BOX = [0.75,0.63,0.90,0.70]#主菜单回到战斗
 BACK_TO_COMBAT_AFTER_CLICK_BOX = [0.49,0.10,0.51,0.15]#战斗结束后随机点击完成结算
 
 #从作战选择界面进入8-1n界面
-COMBAT_MISSION_CLICK_BOX = [0.05,0.20,0.10,0.24]#点击作战任务
+COMBAT_MISSION_CLICK_BOX = [0.05,0.26,0.10,0.30]#点击作战任务
 CHAPTER_DRAG_BOX = [0.16,0.75,0.22,0.80]#向上拖章节选择条
-CHAPTER_8_CLICK_BOX = [0.15,0.22,0.20,0.28]#选择第8章
+CHAPTER_8_CLICK_BOX = [0.15,0.17,0.20,0.18]#选择第8章
 NIGHT_CLICK_BOX = [0.92,0.24,0.97,0.28]#选择夜战
 
 #开始8-1n
@@ -422,7 +422,7 @@ def combatPrepare():
     print("STATE: 战前整备")
     mouseClick(MAP_SCALE_BOX,0.5,0.6)
     scaleMap(MAP_SCALE_BOX,1,10)
-    mouseDrag(MAP_DRAG_BOX,1,1,1,200,0.001,1)
+    mouseDrag(MAP_DRAG_BOX,1,1,1,240,0.001,1)
     setTeam()
     startCombat()
     mouseClick(AIRPORT_1_CLICK_BOX,1,2)
@@ -604,7 +604,7 @@ def gotoPowerup():
     mouseClick(CHOOSE_RETIRE_CLICK_BOX,1,2)
     mouseClick(CHOOSE_EQUIPMENT_CLICK_BOX,1,2)
     mouseClick(CHOOSE_ORDER_CLICK_BOX,1,2)
-    for i in range(9):
+    for i in range(15):
         mouseClick(EQUIPMENT_1_CLICK_BOX,0.25,0.3)#选六个
         mouseClick(EQUIPMENT_2_CLICK_BOX,0.25,0.3)
         mouseClick(EQUIPMENT_3_CLICK_BOX,0.25,0.3)
