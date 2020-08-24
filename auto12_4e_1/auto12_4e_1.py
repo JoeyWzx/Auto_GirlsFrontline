@@ -27,14 +27,13 @@ from skimage.metrics import structural_similarity
 
 #=================截图比对区域=================#
 IMAGE_PATH = 'initial_IMG/'#读取截图的路径
-MAIN_MENU_IMAGE_BOX = [0.65,0.58,0.75,0.63]#主界面判断区域                       
+MAIN_MENU_IMAGE_BOX = [0.65,0.50,0.75,0.58]#主界面判断区域                       
 L_SUPPORT_IMAGE_BOX = [0.05,0.30,0.18,0.39]#后勤完成界面判断区域                
 COMBAT_MENU_IMAGE_BOX = [0.05,0.70,0.12,0.80]#战斗菜单界面判断区域         
-CHOOSE_0_2_IMAGE_BOX = [0.50,0.43,0.60,0.50]#0-2界面判断区域                          
-MAP_0_2_IMAGE_BOX = [0.82,0.80,0.95,0.88]#0-2地图判断区域   
+CHOOSE_12_4e_IMAGE_BOX = [0.52,0.71,0.60,0.74]#12-4e界面判断区域                          
+MAP_12_4e_IMAGE_BOX = [0.82,0.82,0.95,0.88]#12-4e地图判断区域   
 SET_TEAM_IMAGE_BOX = [0.85,0.75,0.92,0.78]#队伍放置判断区域 
-FORM_TEAM_IMAGE_BOX = [0.28,0.38,0.38,0.50]#队伍编成判断区域 
-CHANGE_MEMBER_IMAGE_BOX = [0.90,0.30,0.95,0.40]#人员选择判断区域       
+SET_WE_TEAM_IMAGE_BOX = [0.12,0.28,0.20,0.32]#重装队伍队伍放置判断区域      
 COMBAT_START_IMAGE_BOX = [0.82,0.82,0.95,0.88]#战役开始判断区域    
 TEAM_INFO_IMAGE_BOX = [0.85,0.67,0.94,0.71]#队伍详情页判断区域                    
 COMBAT_FINISH_IMAGE_BOX = [0.05,0.19,0.15,0.23]#战役完成判断区域   
@@ -42,25 +41,24 @@ GOTO_POWERUP_IMAGE_BOX = [0.58,0.60,0.68,0.64]#提醒强化判断区域
 NAVIGATE_IMAGE_BOX = [0.15,0.10,0.20,0.15]#导航条判断区域       
 DESKTOP_IMAGE_BOX = [0.10,0.20,0.22,0.35]#模拟器桌面判断区域         
 COMBAT_PAUSE_IMAGE_BOX = [0.45,0.62,0.55,0.67]#战斗终止提示判断区域            
-RETURN_COMBAT_IMAGE_BOX = [0.75,0.63,0.90,0.70]#回到作战界面判断区域    
+RETURN_COMBAT_IMAGE_BOX = [0.75,0.65,0.90,0.68]#回到作战界面判断区域    
 
 
 #=================点击拖动区域=================#
 
 #从主菜单进入作战选择界面
-COMBAT_CLICK_BOX = [0.65,0.58,0.75,0.63]#在主菜单点击战斗（无作战进行中情况）
-#[0.65,0.58,0.75,0.63]
-COMBAT_ON_CLICK_BOX = [0.65,0.50,0.75,0.58]#在主菜单点击战斗（作战中断情况）
+COMBAT_CLICK_BOX = [0.65,0.50,0.75,0.58]#在主菜单点击战斗（无作战进行中情况）
+COMBAT_BREAK_CLICK_BOX = [0.65,0.50,0.75,0.58]#在主菜单点击战斗（作战中断情况）
 
-#从作战选择界面进入0-2界面
-COMBAT_MISSION_CLICK_BOX = [0.05,0.18,0.10,0.22]#点击作战任务
-CHAPTER_DRAG_BOX = [0.16,0.35,0.22,0.40]#向上拖章节选择条
-CHAPTER_0_CLICK_BOX = [0.16,0.18,0.22,0.25]#选择第0章
-NORMAL_CLICK_BOX = [0.74,0.24,0.77,0.28]#选择普通难度
-EPISODE_DRAG_BOX = [0.40,0.35,0.80,0.40]#向上拖小节选择条
+#从作战选择界面进入12-4e界面
+COMBAT_MISSION_CLICK_BOX = [0.05,0.28,0.10,0.32]#点击作战任务
+CHAPTER_DRAG_BOX = [0.16,0.60,0.20,0.65]#向上拖章节选择条
+CHAPTER_12_CLICK_BOX = [0.16,0.52,0.20,0.57]#选择第12章
+EMERGENCY_CLICK_BOX = [0.84,0.24,0.87,0.28]#选择紧急难度
+EPISODE_DRAG_BOX = [0.40,0.35,0.80,0.40]#向下拖小节选择条
 
-#开始/终止0-2
-EPISODE_2_CLICK_BOX = [0.50,0.43,0.60,0.50]#选择第2节
+#开始/终止12-4e
+EPISODE_4_CLICK_BOX = [0.50,0.70,0.60,0.75]#选择第4节
 ENTER_COMBAT_CLICK_BOX = [0.72,0.70,0.80,0.75]#进入作战
 END_COMBAT_STEP1_CLICK_BOX = [0.72,0.62,0.80,0.66]#终止作战
 END_COMBAT_STEP2_CLICK_BOX = [0.52,0.60,0.60,0.65]#确认终止作战
@@ -70,45 +68,30 @@ MAP_SCALE_BOX = [0.20,0.20,0.30,0.25]
 MAP_DRAG_BOX =[0.20,0.20,0.30,0.25]
 
 #队伍放置点
-AIRPORT_CLICK_BOX = [0.34,0.82,0.36,0.83]#机场
-COMMAND_CLICK_BOX = [0.50,0.82,0.52,0.85]#指挥部
-
-#更换打手
-CHANGE_FORCE_STEP1_CLICK_BOX = [0.17,0.74,0.26,0.77]#点击梯队编成
-CHANGE_FORCE_STEP2_CLICK_BOX = [0.15,0.35,0.25,0.55]#点击1队打手
-CHANGE_FORCE_STEP3_1_CLICK_BOX = [0.20,0.25,0.25,0.40]#更换打手1
-CHANGE_FORCE_STEP3_2_CLICK_BOX = [0.32,0.25,0.38,0.40]#更换打手2
-CHANGE_FORCE_STEP4_CLICK_BOX = [0.08,0.10,0.10,0.14]#点击返回
+AIRPORT_CLICK_BOX = [0.475,0.65,0.485,0.67]#重型机场
+COMMAND_CLICK_BOX = [0.445,0.36,0.455,0.38]#指挥部
 
 #放置队伍
-TEAM_SET_CLICK_BOX = [0.85,0.75,0.92,0.78]
+TEAM_SHIFT_CLICK_BOX = [0.42,0.20,0.48,0.24]#切换成普通梯队
+TEAM_SET_CLICK_BOX = [0.85,0.75,0.92,0.78]#放置梯队
 
-#撤退1队
-WITHDRAW_STEP1_CLICK_BOX = [0.72,0.76,0.78,0.78]#点击撤退
-WITHDRAW_STEP2_CLICK_BOX = [0.55,0.61,0.62,0.64]#确认撤退
-
-#重启作战
-RESTART_STEP1_CLICK_BOX = [0.22,0.09,0.26,0.14]#点击终止作战
-RESTART_STEP2_CLICK_BOX = [0.34,0.61,0.43,0.63]#点击重新作战
-
-#16哥修复
-M16_REPAIR_INTERVAL = 6   #16哥隔多少轮修一次
-REPAIR_STEP1_CLICK_BOX = [0.70,0.30,0.76,0.50]#点击m16        
+#扛伤位（第五个）修复
+REPAIR_INTERVAL = 100#隔多少轮修一次
+REPAIR_STEP1_CLICK_BOX = [0.70,0.30,0.76,0.50]#点击五号位        
 REPAIR_STEP2_CLICK_BOX = [0.69,0.65,0.75,0.69]#确定修复          
 REPAIR_STEP3_CLICK_BOX = [0.85,0.75,0.91,0.79]#退出2队界面         
 
 #开始作战
 START_COMBAT_CLICK_BOX = [0.85,0.82,0.92,0.86]#点击开始作战
 
-#补给打手
+#补给队伍
 SUPPLY_STEP1_CLICK_BOX = [0.85,0.68,0.94,0.70]#点击补给
 SUPPLY_STEP2_CLICK_BOX = [0.20,0.20,0.30,0.25]#取消选中
 
 #计划模式
 PLAN_MODE_CLICK_BOX = [0.04,0.77,0.10,0.79]#点击计划模式
-PLAN_POINT1_CLICK_BOX = [0.45,0.67,0.47,0.69]#点击计划点1 
-PLAN_POINT2_CLICK_BOX = [0.45,0.53,0.47,0.54]#点击计划点2
-PLAN_POINT3_CLICK_BOX = [0.66,0.63,0.67,0.64]#点击计划点3
+PLAN_POINT1_CLICK_BOX = [0.545,0.485,0.555,0.495]#点击计划点1 
+PLAN_POINT2_CLICK_BOX = [0.61,0.485,0.62,0.495]#点击计划点2
 PLAN_START_CLICK_BOX = [0.88,0.82,0.98,0.85]#点击执行计划
 
 #战役结算
@@ -289,6 +272,8 @@ def imageCompare(img1,img2):
 #                                             #
 #=============================================#
     
+#=================状态判断区域=================#
+
 #判断是否战役结束
 def isCombatFinished():
     initImage = cv2.imread(IMAGE_PATH+"combat_finish.png")
@@ -296,10 +281,10 @@ def isCombatFinished():
     capImage  = cv2.cvtColor(np.asarray(capImage),cv2.COLOR_RGB2BGR)
     return imageCompare(initImage,capImage)
          
-#判断是否进入了0-2地图
+#判断是否进入了12-4e地图
 def isInMap():
     initImage = cv2.imread(IMAGE_PATH+"map.png")
-    capImage  = getImage(MAP_0_2_IMAGE_BOX)
+    capImage  = getImage(MAP_12_4e_IMAGE_BOX)
     capImage  = cv2.cvtColor(np.asarray(capImage),cv2.COLOR_RGB2BGR)
     return imageCompare(initImage,capImage)
 
@@ -310,10 +295,10 @@ def isGotoPowerup():
     capImage  = cv2.cvtColor(np.asarray(capImage),cv2.COLOR_RGB2BGR)
     return imageCompare(initImage,capImage)
 
-#判断是否是可以选择0-2的界面
-def is0_2():
-    initImage = cv2.imread(IMAGE_PATH+"_0_2.png")
-    capImage  = getImage(CHOOSE_0_2_IMAGE_BOX)
+#判断是否是可以选择12-4e的界面
+def is12_4e():
+    initImage = cv2.imread(IMAGE_PATH+"_12_4e.png")
+    capImage  = getImage(CHOOSE_12_4e_IMAGE_BOX)
     capImage  = cv2.cvtColor(np.asarray(capImage),cv2.COLOR_RGB2BGR)
     return imageCompare(initImage,capImage)
 
@@ -380,26 +365,22 @@ def isSetTeam():
     capImage  = cv2.cvtColor(np.asarray(capImage),cv2.COLOR_RGB2BGR)
     return imageCompare(initImage,capImage)
 
-#在队伍编成界面
-def isFormTeam():
-    initImage = cv2.imread(IMAGE_PATH+"form_team.png")
-    capImage  = getImage(FORM_TEAM_IMAGE_BOX)
+#在布置重装的界面
+def isSetWETeam():
+    initImage = cv2.imread(IMAGE_PATH+"set_we_team.png")
+    capImage  = getImage(SET_WE_TEAM_IMAGE_BOX)
     capImage  = cv2.cvtColor(np.asarray(capImage),cv2.COLOR_RGB2BGR)
     return imageCompare(initImage,capImage)
 
-#在人员选择界面
-def isChangeMember():
-    initImage = cv2.imread(IMAGE_PATH+"change_member.png")
-    capImage  = getImage(CHANGE_MEMBER_IMAGE_BOX)
-    capImage  = cv2.cvtColor(np.asarray(capImage),cv2.COLOR_RGB2BGR)
-    return imageCompare(initImage,capImage)
-  
 #在队伍详情界面
 def isTeamInfo():
     initImage = cv2.imread(IMAGE_PATH+"team_info.png")
     capImage  = getImage(TEAM_INFO_IMAGE_BOX)
     capImage  = cv2.cvtColor(np.asarray(capImage),cv2.COLOR_RGB2BGR)
     return imageCompare(initImage,capImage)
+
+
+#=================动作区域=================#
 
 #从主菜单进入作战菜单（无战斗进行中情况）
 def mainMenuToCombatMenu():
@@ -409,27 +390,27 @@ def mainMenuToCombatMenu():
 #从主菜单进入作战菜单（战斗中断情况）
 def mainMenuToCombatMenu_combatOn():
     print("ACTION: 前往作战菜单-战斗中断")
-    mouseClick(COMBAT_ON_CLICK_BOX,5,6)  
+    mouseClick(COMBAT_BREAK_CLICK_BOX,5,6)  
     
-#从作战菜单进入0-2界面
-def combatMenuTo0_2():
-    print("ACTION: 前往0-2选择界面")
+#从作战菜单进入12-4e界面
+def combatMenuTo12_4e():
+    print("ACTION: 前往12-4e选择界面")
     mouseClick(COMBAT_MISSION_CLICK_BOX,1,2)
-    mouseDrag(CHAPTER_DRAG_BOX,0,1,1,400,0.001,1)
-    mouseClick(CHAPTER_0_CLICK_BOX,1,2)
-    mouseClick(NORMAL_CLICK_BOX,1,2)
+    mouseDrag(CHAPTER_DRAG_BOX,0,-1,3,400,0.001,1)
+    mouseClick(CHAPTER_12_CLICK_BOX,1,2)
+    mouseClick(EMERGENCY_CLICK_BOX,1,2)
     mouseDrag(EPISODE_DRAG_BOX,0,1,1,300,0.001,1)
 
-#开始0-2
-def start0_2():
-    print("ACTION: 启动0-2")
-    mouseClick(EPISODE_2_CLICK_BOX,2,3)
+#开始12-4e
+def start12_4e():
+    print("ACTION: 启动12-4e")
+    mouseClick(EPISODE_4_CLICK_BOX,2,3)
     mouseClick(ENTER_COMBAT_CLICK_BOX,4,5)    
 
-#终止0-2
-def end0_2():
-    print("ACTION: 终止0-2")
-    mouseClick(EPISODE_2_CLICK_BOX,2,3)
+#终止12-4e
+def end12_4e():
+    print("ACTION: 终止12-4e")
+    mouseClick(EPISODE_4_CLICK_BOX,2,3)
     mouseClick(END_COMBAT_STEP1_CLICK_BOX,2,3)  
     mouseClick(END_COMBAT_STEP2_CLICK_BOX,2,3)  
 
@@ -438,101 +419,14 @@ def adjustMap(tiny = False):
     print("STATE：调整地图")
     if tiny:
         scaleMap(MAP_SCALE_BOX,1,1)
-        mouseDrag(MAP_DRAG_BOX,0,1,1,400,0.001,1)
+        mouseDrag(MAP_DRAG_BOX,1,1,1,400,0.001,1)
     else:
         scaleMap(MAP_SCALE_BOX,1,8)
-        mouseDrag(MAP_DRAG_BOX,0,1,2,400,0.001,1)
-
-#战前准备，调整地图，补给1队
-def combatPrepare():
-    print("STATE: 战前整备")
-    adjustMap()
-    #
-    changeForce(False)
-    #
-    adjustMap(True)
-    if not setTeam():
-        return False
-    if not startCombat():
-        return False
-    supplyAirport()
-    withdraw()
-    restartCombat()
-    return True
-
-#重启作战
-def restartCombat():
-    print("ACTION: 重启作战")
-    mouseClick(RESTART_STEP1_CLICK_BOX,1,1.5)
-    mouseClick(RESTART_STEP2_CLICK_BOX,8,8)
-
-#更换打手
-def changeForce(teamFlag):
-    print("ACTION: 更换打手")
-    mouseClick(AIRPORT_CLICK_BOX,0,0)#点击机场
-    checkCount = 0
-    while not isSetTeam() and checkCount < 20:
-        time.sleep(0.4)
-        checkCount += 1
-    if checkCount >= 20:
-        return False
-    time.sleep(0.4)
-    mouseClick(CHANGE_FORCE_STEP1_CLICK_BOX,0,0)#点击队伍编成
-    checkCount = 0
-    while not isFormTeam() and checkCount < 20:
-        time.sleep(0.4)
-        checkCount += 1
-    if checkCount >= 20:
-        return False
-    time.sleep(0.8)
-    mouseClick(CHANGE_FORCE_STEP2_CLICK_BOX,0,0)#点击打手
-    checkCount = 0
-    while not isChangeMember() and checkCount < 20:
-        time.sleep(0.4)
-        checkCount += 1
-    if checkCount >= 20:
-        return False
-    time.sleep(0.4)
-    if teamFlag:
-        mouseClick(CHANGE_FORCE_STEP3_2_CLICK_BOX,0,0)#更换打手
-    else:
-        mouseClick(CHANGE_FORCE_STEP3_1_CLICK_BOX,0,0)#更换打手
-    checkCount = 0
-    while not isFormTeam() and checkCount < 20:
-        time.sleep(0.4)
-        checkCount += 1
-    if checkCount >= 20:
-        return False
-    time.sleep(0.8)
-    mouseClick(CHANGE_FORCE_STEP4_CLICK_BOX,0,0)#点击返回
-    checkCount = 0
-    while not isInMap() and checkCount < 20:
-        time.sleep(0.4)
-        checkCount += 1
-    if checkCount >= 20:
-        return False
-    time.sleep(0.4)
-    return True
+        mouseDrag(MAP_DRAG_BOX,1,1,1,400,0.001,1)
 
 #放置队伍
 def setTeam():
     print("ACTION: 放置队伍")
-    mouseClick(AIRPORT_CLICK_BOX,0,0)#点击机场
-    checkCount = 0
-    while not isSetTeam() and checkCount < 20:
-        time.sleep(0.4)
-        checkCount += 1
-    if checkCount >= 20:
-        return False
-    time.sleep(0.2)
-    mouseClick(TEAM_SET_CLICK_BOX,0,0)#点击放置
-    checkCount = 0
-    while not isInMap() and checkCount < 20:
-        time.sleep(0.4)
-        checkCount += 1
-    if checkCount >= 20:
-        return False
-    time.sleep(0.2)
     mouseClick(COMMAND_CLICK_BOX,0,0)#点击指挥部
     checkCount = 0
     while not isSetTeam() and checkCount < 20:
@@ -549,12 +443,37 @@ def setTeam():
     if checkCount >= 20:
         return False
     time.sleep(0.2)
+    mouseClick(AIRPORT_CLICK_BOX,0,0)#点击机场
+    checkCount = 0
+    while not (isSetTeam() or isSetWETeam()) and checkCount < 20:
+        time.sleep(0.4)
+        checkCount += 1
+    if checkCount >= 20:
+        return False
+    time.sleep(0.2)
+    if isSetWETeam():
+        mouseClick(TEAM_SHIFT_CLICK_BOX,0,0)#切换普通队伍
+    checkCount = 0
+    while not isSetTeam() and checkCount < 10:
+        time.sleep(0.4)
+        checkCount += 1
+    if checkCount >= 20:
+        return False    
+    mouseClick(TEAM_SET_CLICK_BOX,0,0)#点击放置
+    checkCount = 0
+    while not isInMap() and checkCount < 20:
+        time.sleep(0.4)
+        checkCount += 1
+    if checkCount >= 20:
+        return False
+    time.sleep(0.2)
+    
     return True
 
-#16哥修复
-def repairM16():
-    print("ACTION: 修复16哥")
-    mouseClick(COMMAND_CLICK_BOX,2,3)
+#扛伤位修复
+def repair():
+    print("ACTION: 修复")
+    mouseClick(AIRPORT_CLICK_BOX,2,3)
     mouseClick(REPAIR_STEP1_CLICK_BOX,1,2)
     mouseClick(REPAIR_STEP2_CLICK_BOX,1,2)
     mouseClick(REPAIR_STEP3_CLICK_BOX,2,3)
@@ -572,9 +491,9 @@ def startCombat():
     time.sleep(2)
     return True
 
-#补给机场打手
-def supplyAirport():
-    print("ACTION: 补给机场队")
+#补给打捞队伍
+def supplyTeam():
+    print("ACTION: 补给打捞队")
     mouseClick(AIRPORT_CLICK_BOX,1.5,2)#点击机场队
     mouseClick(AIRPORT_CLICK_BOX,0,0)
     checkCount = 0
@@ -593,45 +512,20 @@ def supplyAirport():
         return False
     time.sleep(0.5)
     return True
-
-#撤退休息队
-def withdraw():
-    print("ACTION: 撤退机场队")
-    #mouseClick(AIRPORT_CLICK_BOX,1.5,2)
-    mouseClick(AIRPORT_CLICK_BOX,0,0)
-    checkCount = 0
-    while not isTeamInfo() and checkCount < 20:
-        time.sleep(0.4)
-        checkCount += 1
-    if checkCount >= 20:
-        return False
-    time.sleep(0.2)
-    mouseClick(WITHDRAW_STEP1_CLICK_BOX,2,2)
-    mouseClick(WITHDRAW_STEP2_CLICK_BOX,0,0)
-    checkCount = 0
-    while not isCombatStart() and checkCount < 20:
-        time.sleep(0.5)
-        checkCount += 1
-    if checkCount >= 20:
-        return False
-    time.sleep(0.5)
-    return True
     
 #计划模式
 def planMode():
     print("ACTION: 计划模式")
-    mouseClick(COMMAND_CLICK_BOX,0.8,1)
     mouseClick(PLAN_MODE_CLICK_BOX,1,2)
     mouseClick(PLAN_POINT1_CLICK_BOX,0.25,0.3)
     mouseClick(PLAN_POINT2_CLICK_BOX,0.25,0.3)
-    mouseClick(PLAN_POINT3_CLICK_BOX,0.25,0.3)
     mouseClick(PLAN_START_CLICK_BOX,0,0)
 
 #战役结算
 def endCombat():
     print("ACTION: 战役结算")
     checkCount = 0
-    while not is0_2() and checkCount < 100:
+    while not is12_4e() and checkCount < 100:
         mouseClick(COMBAT_END_CLICK_BOX,0.2,0.3)
         checkCount += 1
     if checkCount >= 100:
@@ -644,7 +538,7 @@ def gotoRetire():
     mouseClick(GOTO_POWERUP_CLICK_BOX,5,6)
     mouseClick(CHOOSE_RETIRE_CLICK_BOX,1,2)
     mouseClick(CHOOSE_RETIRE_CHARACTER_CLICK_BOX,1,2)
-    for i in range(10):
+    for i in range(8):
         mouseClick(RETIRE_CHARACTER_1_CLICK_BOX,0.2,0.3)#选六个
         mouseClick(RETIRE_CHARACTER_2_CLICK_BOX,0.2,0.3)
         mouseClick(RETIRE_CHARACTER_3_CLICK_BOX,0.2,0.3)
@@ -717,42 +611,30 @@ if __name__ == "__main__":
     combatCount = 0
     firstCombat = True
     failCount = 0
-    teamFlag = True#Flag为True时选第二只，为False时选第一只
 
     while True:
         if isInMap():
             print("STATE：已进入地图")
             failCount = 0
-            if firstCombat:#战前准备
+            if firstCombat:#初次进入地图
                 firstCombat = False
-                teamFlag = True
-                if not combatPrepare():
-                    closeGame()
-                continue
+                adjustMap()#大幅缩放
             else:
-                adjustMap(True)
-            if not changeForce(teamFlag):#更换打手
-                print("ERROR：更换打手失败")
-                closeGame()
-                continue
+                adjustMap(True)#少量缩放
             if not setTeam():#放置队伍
                 print("ERROR：放置队伍失败")
                 closeGame()
                 continue
-            if combatCount % M16_REPAIR_INTERVAL == 0:
-                repairM16()
+            if combatCount % REPAIR_INTERVAL == 0:
+                repair()
             if not startCombat():#开始作战
                 print("ERROR：开始作战失败")
                 closeGame()
                 continue
-            if not supplyAirport():#补给机场队  
-                print("ERROR：补给机场队失败")
+            if not supplyTeam():#补给机场队  
+                print("ERROR：补给失败")
                 closeGame()
                 continue   
-            if not withdraw():#撤退机场队
-                print("ERROR：机场队撤退失败")
-                closeGame()
-                continue
             planMode()
             checkCount = 0
             while (not isCombatFinished()) and checkCount < 300:#计划开始后300s还没打完，一般是出问题了（比方说卡了一下导致流程漏了）
@@ -767,23 +649,22 @@ if __name__ == "__main__":
                 closeGame()
                 continue
             combatCount += 1
-            teamFlag = (not teamFlag)
             currentTime = datetime.datetime.now()
             runtime = currentTime - startTime
-            print('> 已运行：',runtime,'  0-2轮次：',combatCount)                
+            print('> 已运行：',runtime,'  12-4e轮次：',combatCount)                
         elif isGotoPowerup():
             print("STATE： 提醒强化界面")
             #gotoPowerup()
             gotoRetire()
             backToMainMenu()
             failCount = 0
-        elif is0_2():
-            print("STATE： 0-2界面")
-            start0_2()
+        elif is12_4e():
+            print("STATE： 12-4e界面")
+            start12_4e()
             failCount = 0
         elif isCombatMenu():
             print("STATE： 战斗菜单")
-            combatMenuTo0_2()
+            combatMenuTo12_4e()
             failCount = 0
         elif isCombatPause():
             print("STATE： 战斗中断提醒界面")
@@ -793,8 +674,8 @@ if __name__ == "__main__":
             print("STATE： 返回作战界面")
             failCount = 0
             mainMenuToCombatMenu_combatOn()
-            combatMenuTo0_2()
-            end0_2()
+            combatMenuTo12_4e()
+            end12_4e()
             firstCombat = True
         elif isMainMenu():
             print("STATE： 主菜单界面")
